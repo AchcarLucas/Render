@@ -2,9 +2,9 @@ var Deg2Rad = (math.PI / 180);
 var time = 0;
 
 function update(content){
-	cube.identity();
+	object.identity();
 	
-	cube.scale(scale_x, scale_y, scale_z);
+	object.scale(scale_x, scale_y, scale_z);
 	
 	var x = 0;
 	var y = 0;
@@ -20,13 +20,13 @@ function update(content){
 		z = rotate_z;
 	}
 	
-	cube.rotate(x, y, z);
+	object.rotate(x, y, z);
 	
-	cube.position(pos_x, pos_y, pos_z);
+	object.position(pos_x, pos_y, pos_z);
 	
 	if(view_mode == 1){
-		cube.perspectiva();
+		object.perspectiva();
 	}else if(view_mode == 0){
-		cube.orthographic();
+		object.orthographic();
 	}
 }

@@ -46,23 +46,21 @@ $(document).ready(function(){
 	});
 	
 	$("#input_open").change(function(e){
-		var fileName = $("#input_open").val();
-		var jsonData = null;
-		var data = $.ajax({
-		  url:fileName,
-		  success: function (data){   
-			jsonData = JSON.parse(data);
-			console.log(jsonData);			
-			return data 
-			}
-		});
+		var input = $("#input_open");
+		
+		var reader = new FileReader();
+		reader.onload = function(){
+		  object.loadObj(JSON.parse(reader.result));
+        };
+        reader.readAsText(input[0].files[0]);
+		
 	});
 	
 	content.translate(canvas.width / 2, canvas.height / 2);
 	
 	// VAR MAIN
-	cube = new render();
-	cube.loadObj("cube.js");
+	object = new render();
+	object.loadObj(null);
 	
 	canvas.onmousemove = function(event){
 		var rect = canvas.getBoundingClientRect();

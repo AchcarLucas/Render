@@ -2,7 +2,7 @@ function draw(content){
 	// LIMPA TELA
 	content.clearRect(-1*(canvas.width / 2), -1*(canvas.height / 2), canvas.width, canvas.height);
 		
-	cube.draw(content);
+	object.draw(content);
 		
 	// DESENHA UM CIRCULO MOVENDO-SE JUNTO COM O MOUSE
 	// canvasCircle(x, y, r, startAngle, endAngle, style, isFill)
